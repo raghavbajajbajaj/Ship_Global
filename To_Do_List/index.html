@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Todo List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="card" id="backlog">
+            <h2>Backlog</h2>
+            <ul id="backlog-list">
+                <li>Read a book</li>
+                <li>Plan a trip</li>
+            </ul>
+            <div class="buttons">
+                <button class="left" disabled>&lt;</button>
+                <button class="right" onclick="moveRight('backlog-list', 'todo-list')">&gt;</button>
+            </div>
+        </div>
+        <div class="card" id="todo">
+            <h2>To Do</h2>
+            <ul id="todo-list">
+                <li>Go cycling</li>
+                <li>Learn JavaScript</li>
+            </ul>
+            <div class="buttons">
+                <button class="left" onclick="moveLeft('todo-list', 'backlog-list')">&lt;</button>
+                <button class="right" onclick="moveRight('todo-list', 'ongoing-list')">&gt;</button>
+            </div>
+        </div>
+        <div class="card" id="ongoing">
+            <h2>Ongoing</h2>
+            <ul id="ongoing-list">
+                <li>Write a blog post</li>
+                <li>Work on a project</li>
+            </ul>
+            <div class="buttons">
+                <button class="left" onclick="moveLeft('ongoing-list', 'todo-list')">&lt;</button>
+                <button class="right" onclick="moveRight('ongoing-list', 'done-list')">&gt;</button>
+            </div>
+        </div>
+        <div class="card" id="done">
+            <h2>Done</h2>
+            <ul id="done-list">
+                <li>Complete homework</li>
+            </ul>
+            <div class="buttons">
+                <button class="left" onclick="moveLeft('done-list', 'ongoing-list')">&lt;</button>
+                <button class="right" disabled>&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
